@@ -5,53 +5,40 @@ var Game = {
   score: 0,
   level: 1,
   timeForLevel: 90000,
-  startGame: function() {
-    Game.startLevel;
-  }
-  startLevel: function() {
-    var arrayLength = arrayOfWords.length;
+  gameRunning: false,
+  randomword: function(){
+    var arrayLength = Game.arrayOfWords.length;
     var index = Math.floor((Math.random()*arrayLength));
-    var word = arrayOfWords[index].split("");
-    arrayOfWords.splice(index, 1);
-    word.sort(function() {
-      return 0.5 - Math.random();
-    });
-  }
+    var word = Game.arrayOfWords[index].split("");
+    Game.arrayOfWords.splice(index, 1);
+    return word.sort(0.5 - Math.random());
+  },
+  startGame: function() {
+    Game.gameRunning = true;
+    Game.startLevel(Game.randomword());
+  },
+  startLevel: function(shufle) {
+    Game.topleft = shufle[0];
+    Game.topcenter = shufle[1];
+    Game.topright = shufle[2];
+    Game.centerleft = shufle[3];
+    Game.centercenter = shufle[4];
+    Game.centerright = shufle[5];
+    Game.bottomleft = shufle[6];
+    Game.bottomcenter = shufle[7];
+    Game.bottomright = shufle[8];
 
-}
+    $('#topleft').html(Game.topleft);
+    $('#topcenter').html(Game.topcenter);
+    $('#topright').html(Game.topright);
+    $('#centerleft').html(Game.centerleft);
+    $('#centercenter').html(Game.centercenter);
+    $('#centerright').html(Game.centerright);
+    $('#bottomleft').html(Game.bottomleft);
+    $('#bottomcenter').html(Game.bottomcenter);
+    $('#bottomright').html(Game.bottomright);
 
-function myFunction1() {
-  alert('1');
-}
-
- var myFunction2 = function() {
- 	alert('2');
-}
-
- var myFunction3 = function() {
- 	alert('3');
-}
-
- var myFunction4 = function() {
- 	alert('4');
-}
-
- var myFunction5 = function() {
- 	alert('5');
-}
-
- var myFunction6 = function() {
- 	alert('6');
-}
-
- var myFunction7 = function() {
- 	alert('7');
-}
-
- var myFunction8 = function() {
- 	alert('8');
-}
-
- var myFunction9 = function() {
- 	alert('9');
+    Game.propagateLevel();
+  },
+  
 }
