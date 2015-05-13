@@ -21,10 +21,12 @@ var Game = {
   startGame: function() {
     Game.gameRunning = true;
     Game.startLevel();
+    Game.propagateLevel();
   },
   startLevel: function() {
+    $('button').css('visibility', 'visible');
     shufle = Game.randomword();
-    console.log(shufle)
+    console.log(shufle.length);
     Game.topleft = shufle[0];
     Game.topcenter = shufle[1];
     Game.topright = shufle[2];
@@ -45,12 +47,9 @@ var Game = {
     $('#bottomleft').html(Game.bottomleft);
     $('#bottomcenter').html(Game.bottomcenter);
     $('#bottomright').html(Game.bottomright);
-
-    Game.propagateLevel();
   },
   resetLevel: function() {
     Game.startLevel();
-
   },
   undoMove: function() {
 
@@ -78,7 +77,7 @@ var Game = {
     }
   },
   submitAnswer: function() {
-    if(Game.gameRunning) {
+    // if(Game.gameRunning) {
       if (Game.string == Game.origWord) {
         Game.score += Game.levelPoints;
         Game.level += 1;
@@ -87,7 +86,7 @@ var Game = {
       } else {
         alert('Your answer is incorrect');
       }
-    }
+    // }
   },
   help: function() {
     alert("Just spell the word in the right order to score some points and progress to the next level.");
@@ -117,38 +116,38 @@ $(document).ready(function() {
   });
   $("#topleft").click(function() {
     Game.joinAnswer(Game.topleft);
-    $(this).hide();
+    $(this).css('visibility', 'hidden')
   });
   $("#topcenter").click(function() {
     Game.joinAnswer(Game.topcenter);
-    $(this).hide();
+    $(this).css('visibility', 'hidden')
   });
   $("#topright").click(function() {
     Game.joinAnswer(Game.topright);
-    $(this).hide();
+    $(this).css('visibility', 'hidden')
   });
   $("#centerleft").click(function() {
     Game.joinAnswer(Game.centerleft);
-    $(this).hide();
+    $(this).css('visibility', 'hidden')
   });
   $("#centercenter").click(function() {
     Game.joinAnswer(Game.centercenter);
-    $(this).hide();
+    $(this).css('visibility', 'hidden')
   });
   $("#centerright").click(function() {
     Game.joinAnswer(Game.centerright);
-    $(this).hide();
+    $(this).css('visibility', 'hidden')
   });
   $("#bottomleft").click(function() {
     Game.joinAnswer(Game.bottomleft);
-    $(this).hide();
+    $(this).css('visibility', 'hidden')
   });
   $("#bottomcenter").click(function() {
     Game.joinAnswer(Game.bottomcenter);
-    $(this).hide();
+    $(this).css('visibility', 'hidden')
   });
   $("#bottomright").click(function() {
     Game.joinAnswer(Game.bottomright);
-    $(this).hide();
+    $(this).css('visibility', 'hidden')
   });
 });
