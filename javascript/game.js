@@ -8,6 +8,7 @@ var Game = {
   gameRunning: false,
   levelReset: false,
   string: "",
+  shufle: [],
   randomword: function(){
     var arrayLength = Game.arrayOfWords.length;
     var index = Math.floor((Math.random()*arrayLength));
@@ -19,9 +20,11 @@ var Game = {
   },
   startGame: function() {
     Game.gameRunning = true;
-    Game.startLevel(Game.randomword());
+    Game.startLevel();
   },
-  startLevel: function(shufle) {
+  startLevel: function() {
+    shufle = Game.randomword();
+    console.log(shufle)
     Game.topleft = shufle[0];
     Game.topcenter = shufle[1];
     Game.topright = shufle[2];
@@ -76,12 +79,11 @@ var Game = {
   },
   submitAnswer: function() {
     if(Game.gameRunning) {
-      console.log(Game.string);
-      console.log(Game.word);
       if (Game.string == Game.origWord) {
         Game.score += Game.levelPoints;
         Game.level += 1;
         Game.timeForLevel = 90000;
+        Game.startLevel();
       } else {
         alert('Your answer is incorrect');
       }
