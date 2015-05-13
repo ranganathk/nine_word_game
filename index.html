@@ -4,6 +4,7 @@
     <title>Nine Word Game</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
     <link rel="stylesheet" href="stylesheet/styles.css">
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
     <script src="javascript/game.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
   </head>
@@ -11,43 +12,48 @@
   <body>
   
     <div class="container">
+      <div id="score-container">
+        <div id="question-score" class="score">
+          <div class="vcenter">Timer: <span id="points"></span></div>
+        </div>
+        <div id="global-score" class="score">
+          <div class="vcenter">Score: <span id="score"></span></div>
+        </div>
+      </div>
       <div class="v-center">
         <h1>Nine Word Game!</h1>
-              <table>
-                <tr>
-                  <td><button id="topleft">a</button></td>
-                  <td><button id="topcenter">a</button></td>
-                  <td><button id="topright">a</button></td>
-                </tr>
-                <tr>
-                  <td><button id="centerleft">a</button></td>
-                  <td><button id="centercenter">a</button></td>
-                  <td><button id="centerright">a</button></td>
-                </tr>
-                <tr>
-                  <td><button id="bottomleft">a</button></td>
-                  <td><button id="bottomcenter">a</button></td>
-                  <td><button id="bottomright">a</button></td>
-                </tr>
-              </table>
-              <table class="primary">
-                <tr>
-                  <td><button class="primary" id="start">Start</button></td>
-                </tr>
-                <tr>
-                  <td><button class="primary" id="reset">Reset</button></td>
-                </tr>
-                <tr>
-                  <td><button class="primary" id="undo">Undo</button></td>
-                </tr>
-                <tr>
-                  <td><button class="primary" id="new">New</button></td>
-                </tr>
-                <tr>
-                  <td><button class="primary" id="help">Help</button></td>
-                </tr>
-              </table>
-              <form><input type="text" name="firstname"></form>
+          <table>
+            <tr>
+              <td><button id="topleft"></button></td>
+              <td><button id="topcenter"></button></td>
+              <td><button id="topright"></button></td>
+            </tr>
+            <tr>
+              <td><button id="centerleft"></button></td>
+              <td><button id="centercenter"></button></td>
+              <td><button id="centerright"></button></td>
+            </tr>
+            <tr>
+              <td><button id="bottomleft"></button></td>
+              <td><button id="bottomcenter"></button></td>
+              <td><button id="bottomright"></button></td>
+            </tr>
+          </table>
+          <table class="primary">
+            <tr>
+              <td><button class="primary" id="start">Start</button></td>
+            </tr>
+            <tr>
+              <td><button class="primary" id="reset">Reset</button></td>
+            </tr>
+            <tr>
+              <td><button class="primary" id="undo">Undo</button></td>
+            </tr>
+            <tr>
+              <td><button class="primary" id="help">Help</button></td>
+            </tr>
+          </table>
+          <form><input type="text" name="firstname"></form>
 
 
 
