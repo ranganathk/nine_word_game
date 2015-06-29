@@ -9,6 +9,8 @@ var Game = {
   levelReset: false,
   string: "",
   shufle: [],
+  codeNo: 0,
+  letter: "",
   
   randomword: function(){
     var arrayLength = Game.arrayOfWords.length;
@@ -34,15 +36,14 @@ var Game = {
     Game.propagateLevel();
   },
 
-  resetLevel: function() {
-    //Game.startLevel();
-  },
-
   undoMove: function() {
-
+    Game.string = Game.string.slice(0,-1);
+    $($('td button')[Game.codeNo]).html(Game.letter);
+    $('#input-text').html(Game.string);
   },
 
   propagateLevel: function() {
+    $('#input-text').html("");
     clearInterval(Game.propagator);
     Game.timeForLevel = 90;
     $('#points').html(Game.timeForLevel);
@@ -62,14 +63,13 @@ var Game = {
 
   joinAnswer: function(alphabet) {
     Game.string = Game.string.concat(alphabet);
-    console.log(Game.string);
+    $('#input-text').html(Game.string);
     if ((Game.string).length == 9) {
       Game.submitAnswer();
     }
   },
 
   submitAnswer: function() {
-    // if(Game.gameRunning) {
     if (Game.string == Game.origWord) {
       Game.levelPoints = Game.timeForLevel;
       Game.score += Game.levelPoints;
@@ -93,6 +93,7 @@ var Game = {
       alert('Game Over!');
     }
     Game.gameRunning = false;
+    Game.score = 0;
   }
 };
 
@@ -110,8 +111,10 @@ $(document).ready(function() {
     Game.help();
   });
   $(".secondary").click(function() {
-    var letter = $(this).html();
+    Game.letter = $(this).html();
     $(this).html("");
-    Game.joinAnswer(letter);
+    Game.codeNo = $(this).data("code");
+    console.log(Game.codeNo);
+    Game.joinAnswer(Game.letter);
   });
 });
