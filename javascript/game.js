@@ -9,7 +9,7 @@ var Game = {
   levelReset: false,
   string: "",
   shufle: [],
-  codeNo: 0,
+  codeNo: -50000,
   letter: "",
   
   randomword: function(){
@@ -34,6 +34,10 @@ var Game = {
       $($('td button')[i]).html(Game.shufle[i]);
     }
     Game.propagateLevel();
+  },
+
+  resetLevel:function(){
+    Game.startLevel();
   },
 
   undoMove: function() {
@@ -90,10 +94,12 @@ var Game = {
     Game.levelPoints = 0;
     $('#points').html(Game.levelPoints);
     if(Game.gameRunning) {
-      alert('Game Over!');
+      alert('Thank you for playing, your score is ' + Game.score);
     }
     Game.gameRunning = false;
     Game.score = 0;
+    Game.string = "";
+    $('#input-text').html(Game.string);
   }
 };
 
