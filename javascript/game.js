@@ -1,4 +1,3 @@
-//console.log("Hi");
 
 var Game = {
   arrayOfWords: ["abduction", "abolished", "adversity", "algorithm", "amplitude", "anxiously", "auctioned", "authorize", "benchmark", "bestowing", "bifurcate", "binocular", "biography", "blasphemy", "blueprint", "bothering", "boulevard", "breathing", "breakdown", "byproduct", "capturing", "cautioned", "certainly", "chemistry", "clampdown", "clergyman", "clipboard", "coastline", "cohabited", "combative", "comparing", "competing", "compliant", "comprised", "configure", "conspired", "constable", "contrived", "copyright", "countable", "cumlinate", "curtailed", "custodian", "customary", "dangerous", "defiantly", "deflation", "deformity", "deploying", "deporting", "diplomacy", "discharge", "discovery", "dislocate", "dismantle", "dragonfly", "duplicate", "education", "equitably", "exclusion", "excursion", "exhorting", "exploding", "exploring", "exporting", "expulsion"],
@@ -9,7 +8,7 @@ var Game = {
   levelReset: false,
   string: "",
   shufle: [],
-  codeNo: -50000,
+  codeNo: [],
   letter: "",
   
   randomword: function(){
@@ -29,9 +28,9 @@ var Game = {
 
   startLevel: function() {
     Game.shufle = Game.randomword();
-    $('button').css('visibility', 'visible');
+    $('#game .secondary').css('visibility', 'visible');
     for (var i = 0; i < Game.shufle.length ; i++) {
-      $($('td button')[i]).html(Game.shufle[i]);
+      $($('#game .secondary')[i]).html(Game.shufle[i]);
     }
     Game.propagateLevel();
   },
@@ -41,8 +40,10 @@ var Game = {
   },
 
   undoMove: function() {
-    Game.string = Game.string.slice(0,-1);
-    $($('td button')[Game.codeNo]).html(Game.letter);
+    Game.letter = Game.string.substr(Game.string.length - 1);
+    $($('#game .secondary')[Game.codeNo[Game.codeNo.length - 1]]).html(Game.letter);
+    Game.codeNo.pop();
+    Game.string = Game.string.slice(0, -1);
     $('#input-text').html(Game.string);
   },
 
@@ -119,8 +120,7 @@ $(document).ready(function() {
   $(".secondary").click(function() {
     Game.letter = $(this).html();
     $(this).html("");
-    Game.codeNo = $(this).data("code");
-    console.log(Game.codeNo);
+    Game.codeNo.push($(this).data("code"));
     Game.joinAnswer(Game.letter);
   });
 });

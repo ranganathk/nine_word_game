@@ -1,42 +1,33 @@
 body {
-  color: red;
-}
+  background: #bdc3c7;
+  color: #2c3e50; }
+  body #game {
+    text-align: center; }
+    body #game header {
+      padding: 1em 0; }
+      body #game header h1 {
+        display: inline-block;
+        margin-top: 0; }
+    body #game #gamePlay #gameKeys {
+      width: 300px;
+      height: 300px;
+      font-size: 36px;
+      line-height: 1.5; }
+      body #game #gamePlay #gameKeys .secondary {
+        border: 2px solid #2c3e50;
+        color: #ecf0f1;
+        width: 2em;
+        height: 2em;
+        line-height: 2em;
+        text-align: center; }
+    body #game #gamePlay #gameControls {
+      width: 300px; }
+    body #game #input-text {
+      width: 200px;
+      height: 40px;
+      border: 1px solid blue;
+      margin-top: 10px;
+      text-align: left;
+      font-size: 20px; }
 
-table {
-	border-style: solid;
-	border-width: 5px;
-	border-color: blue;
-    
-}
-
-.v-center {
-  text-align: center;
-  font-size: 20px;
-}
-
-button {
-  font-size: 30px;
-}
-
-table .primary {
-  display: inline-block;
-  font-size: 16px;
-}
-
-.secondary {
-  width: 50px;
-  height: 50px;
-  padding: 0;
-  margin: 0;
-  text-align: center;
-  line-height: 50px;
-}
-
-#input-text {
-  width: 200px;
-  height: 40px;
-  border: 1px solid blue;
-  margin-top: 10px;
-  text-align: left;
-  font-size: 20px;
-}
+/*# sourceMappingURL=styles.css.map */

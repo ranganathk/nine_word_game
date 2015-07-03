@@ -1,0 +1,49 @@
+body {
+  background: #bdc3c7;
+  color: #2c3e50;
+
+  #game {
+    text-align: center;
+    
+    header {
+      padding: 1em 0;
+
+      h1 {
+        display: inline-block;
+        margin-top: 0;
+      }
+    }
+
+    #gamePlay {
+      #gameKeys {
+
+        width: 300px;
+        height: 300px;
+        font-size: 36px;
+        line-height: 1.5;
+        
+        .secondary{
+          border: 2px solid #2c3e50;
+          color: #ecf0f1;
+          width: 2em;
+          height: 2em;
+          line-height: 2em;
+          text-align: center;
+        }
+      }
+
+      #gameControls {
+        width: 300px;
+      }
+    }
+    
+    #input-text {
+      width: 200px;
+      height: 40px;
+      border: 1px solid blue;
+      margin-top: 10px;
+      text-align: left;
+      font-size: 20px;
+    }
+  }
+}

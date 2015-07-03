@@ -1,65 +1,65 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Nine Word Game</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
-    <link rel="stylesheet" href="stylesheet/styles.css">
-    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
-    <script src="javascript/game.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-  </head>
+<head>
+  <title>Nine Word Game</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+  <link rel="stylesheet" href="stylesheet/styles.css">
+  <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+  <script src="javascript/game.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+</head>
 
-  <body>
-  
-    <div class="container">
-      <div id="score-container">
-        <div id="question-score" class="score">
-          <div class="vcenter">Timer: <span id="points"></span></div>
+<body>
+
+  <div id="game" class="container">
+    <header id="score-container" class="row">
+      <div id="question-score" class="score pull-left">
+        <div class="vcenter">Timer: <span id="points"></span></div>
+      </div>
+      <div id="global-score" class="score pull-right">
+        <div class="vcenter">Score: <span id="score"></span></div>
+      </div>
+      <h1>Nine Word Game!</h1>
+    </header>
+    <div id="gamePlay" class="row">
+      <div id="gameKeys" class="container-fluid">
+        <div class="row">
+          <div class="col-md-4 secondary" data-code="0"></div>
+          <div class="col-md-4 secondary" data-code="1"></div>
+          <div class="col-md-4 secondary" data-code="2"></div>
         </div>
-        <div id="global-score" class="score">
-          <div class="vcenter">Score: <span id="score"></span></div>
+        <div class="row">
+          <div class="col-md-4 secondary" data-code="3"></div>
+          <div class="col-md-4 secondary" data-code="4"></div>
+          <div class="col-md-4 secondary" data-code="5"></div>
+        </div>
+        <div class="row">
+          <div class="col-md-4 secondary" data-code="6"></div>
+          <div class="col-md-4 secondary" data-code="7"></div>
+          <div class="col-md-4 secondary" data-code="8"></div>
         </div>
       </div>
-      <div class="v-center">
-        <h1>Nine Word Game!</h1>
-          <table>
-            <tr>
-              <td><button class="secondary" data-code="0"></button></td>
-              <td><button class="secondary" data-code="1"></button></td>
-              <td><button class="secondary" data-code="2"></button></td>
-            </tr>
-            <tr>
-              <td><button class="secondary" data-code="3"></button></td>
-              <td><button class="secondary" data-code="4"></button></td>
-              <td><button class="secondary" data-code="5"></button></td>
-            </tr>
-            <tr>
-              <td><button class="secondary" data-code="6"></button></td>
-              <td><button class="secondary" data-code="7"></button></td>
-              <td><button class="secondary" data-code="8"></button></td>
-            </tr>
-          </table>
-          <table class="primary">
-            <tr>
-              <td><button class="primary" id="start">Start</button></td>
-            </tr>
-            <tr>
-              <td><button class="primary" id="reset">Reset</button></td>
-            </tr>
-            <tr>
-              <td><button class="primary" id="undo">Undo</button></td>
-            </tr>
-            <tr>
-              <td><button class="primary" id="help">Help</button></td>
-            </tr>
-          </table>
-          <div id="input-text">
-            
-          </div>
+      <div id="gameControls" class="container-fluid">
+        <div class="row">
+          <div class="primary" id="start">Start</div>
         </div>
+        <div class="row">
+          <div class="primary" id="reset">Reset</div>
+        </div>
+        <div class="row">
+          <div class="primary" id="undo">Undo</div>
+        </div>
+        <div class="row">
+          <div class="primary" id="help">Help</div>
+        </div>
+      </div>
+      <div id="input-text">
 
+      </div>
     </div>
 
-  </body>
+  </div>
+
+</body>
 
 </html>
