@@ -120,7 +120,11 @@ $(document).ready(function() {
   $(".secondary").click(function() {
     Game.letter = $(this).html();
     $(this).html("");
-    Game.codeNo.push($(this).data("code"));
+    if (Game.letter == "") {
+      //Do nothing
+    } else {
+      Game.codeNo.push($(this).data("code"));
+    }
     Game.joinAnswer(Game.letter);
   });
 });
