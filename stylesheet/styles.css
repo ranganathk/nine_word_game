@@ -1,20 +1,66 @@
 body {
-  color: red;
-}
+  background: #bdc3c7;
+  color: #2c3e50; }
+  body #game {
+    text-align: center; }
+    body #game header {
+      padding: 1em 0; }
+      body #game header h1 {
+        display: inline-block;
+        margin-top: 0; }
+    body #game #gamePlay #gameKeys {
+      width: 300px;
+      height: 300px;
+      font-size: 36px;
+      line-height: 1.5; }
+      body #game #gamePlay #gameKeys .secondary {
+        border: 2px solid #2c3e50;
+        background-color: #34495e;
+        color: #ecf0f1;
+        width: 100px;
+        height: 100px;
+        line-height: 100px;
+        text-align: center;
+        box-sizing: border-box;
+        transition: background-color 0.2s ease-in; }
+        body #game #gamePlay #gameKeys .secondary:hover {
+          background-color: #3d566e; }
+        body #game #gamePlay #gameKeys .secondary:link, body #game #gamePlay #gameKeys .secondary:active {
+          background-color: #222f3d; }
+    body #game #gamePlay #gameControls .primary {
+      color: #ecf0f1;
+      height: 30px;
+      width: 200px;
+      line-height: 30px;
+      font-size: 16px;
+      text-align: center;
+      margin: 10px auto; }
+      body #game #gamePlay #gameControls .primary#start {
+        background-color: #2ecc71;
+        border: 2px solid #29b765;
+        border-radius: 4px; }
+      body #game #gamePlay #gameControls .primary#reset {
+        background-color: #2980b9;
+        border: 2px solid #2472a4;
+        border-radius: 4px; }
+      body #game #gamePlay #gameControls .primary#undo {
+        background-color: #c0392b;
+        border: 2px solid #ab3326;
+        border-radius: 4px; }
+      body #game #gamePlay #gameControls .primary#help {
+        background-color: #7f8c8d;
+        border: 2px solid #727f80;
+        border-radius: 4px; }
+    body #game #input-text {
+      width: 200px;
+      height: 40px;
+      background-color: #34495e;
+      border: 1px solid #2c3e50;
+      margin: 40px auto 10px;
+      padding-left: 5px;
+      text-align: left;
+      font-size: 20px;
+      line-height: 40px;
+      color: #ecf0f1; }
 
-table {
-	border-style: solid;
-	border-width: 5px;
-	border-color: blue;
-    
-}
-.v-center {
-  text-align: center;
-}
-button {
-  font-size: 30px;
-}
-table .primary {
-  display: inline-block;
-  font-size: 16px;
-}
+/*# sourceMappingURL=styles.css.map */

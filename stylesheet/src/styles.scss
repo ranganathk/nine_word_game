@@ -1,0 +1,96 @@
+body {
+  background: #bdc3c7;
+  color: #2c3e50;
+
+  #game {
+    text-align: center;
+    
+    header {
+      padding: 1em 0;
+
+      h1 {
+        display: inline-block;
+        margin-top: 0;
+      }
+    }
+
+    #gamePlay {
+      #gameKeys {
+
+        width: 300px;
+        height: 300px;
+        font-size: 36px;
+        line-height: 1.5;
+        
+        .secondary{
+          border: 2px solid #2c3e50;
+          background-color: #34495e;
+          color: #ecf0f1;
+          width: 100px;
+          height: 100px;
+          line-height: 100px;
+          text-align: center;
+          box-sizing: border-box;
+          transition: background-color 0.2s ease-in;
+          
+          &:hover {
+            background-color: lighten(#34495e, 5%);
+          }
+
+          &:link, &:active {
+            background-color: darken(#34495E, 10%);
+          }
+        }
+      }
+
+      #gameControls {
+        .primary {
+          color: #ecf0f1;
+          height: 30px;
+          width: 200px;
+          line-height: 30px;
+          font-size: 16px;
+          text-align: center;
+          margin: 10px auto;
+          
+          &#start {
+            background-color: #2ecc71;
+            border: 2px solid darken(#2ecc71, 5%);
+            border-radius: 4px;
+          }
+          
+          &#reset {
+            background-color: #2980b9;
+            border: 2px solid darken(#2980b9, 5%);
+            border-radius: 4px;
+          }
+          
+          &#undo {
+            background-color: #c0392b;
+            border: 2px solid darken(#c0392b, 5%);
+            border-radius: 4px;
+          }
+          
+          &#help {
+            background-color: #7f8c8d;
+            border: 2px solid darken(#7f8c8d, 5%);
+            border-radius: 4px;
+          }
+        }
+      }
+    }
+    
+    #input-text {
+      width: 200px;
+      height: 40px;
+      background-color: #34495e;
+      border: 1px solid #2c3e50;
+      margin: 40px auto 10px;
+      padding-left: 5px;
+      text-align: left;
+      font-size: 20px;
+      line-height: 40px;
+      color: #ecf0f1;
+    }
+  }
+}
